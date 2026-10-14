@@ -9,7 +9,7 @@ def saving(races, drivers, results):
 
     # 1. Create staging tables (if they don't exist yet)
     cur.execute('''
-        CREATE TABLE IF NOT EXISTS stg_races (
+        CREATE TABLE IF NOT EXISTS raw_races (
             year                      INTEGER,
             grand_prix                VARCHAR(100),
             url                       VARCHAR(255),
@@ -22,7 +22,7 @@ def saving(races, drivers, results):
             winner_time               VARCHAR(20)
         );
 
-        CREATE TABLE IF NOT EXISTS stg_drivers (
+        CREATE TABLE IF NOT EXISTS raw_drivers (
             year                      INTEGER,
             driver_first_name         VARCHAR(50),
             driver_last_name          VARCHAR(50),
@@ -34,7 +34,7 @@ def saving(races, drivers, results):
             pts                       VARCHAR(10)
         );
 
-        CREATE TABLE IF NOT EXISTS stg_results (
+        CREATE TABLE IF NOT EXISTS raw_results (
             url                       VARCHAR(255),
             pos                       VARCHAR(10),
             no                        VARCHAR(10),
