@@ -53,7 +53,7 @@ def saving(races, drivers, results):
 
     for r in races:
         cur.execute('''
-            INSERT INTO stg_races VALUES (
+            INSERT INTO raw_races VALUES (
                 %(year)s, 
                 %(grand_prix)s, 
                 %(url)s, 
@@ -80,7 +80,7 @@ def saving(races, drivers, results):
 
     for d in drivers:
         cur.execute('''
-            INSERT INTO stg_drivers VALUES (
+            INSERT INTO raw_drivers VALUES (
                 %(year)s, 
                 %(first_name)s, 
                 %(last_name)s, 
@@ -105,7 +105,7 @@ def saving(races, drivers, results):
 
     for res in results:
         cur.execute('''
-            INSERT INTO stg_results VALUES (
+            INSERT INTO raw_results VALUES (
                 %(url)s, 
                 %(po)s, 
                 %(no)s, 
